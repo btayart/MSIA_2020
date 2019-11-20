@@ -1,0 +1,1177 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#"
+     xml:base="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-21="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#">
+    <owl:Ontology rdf:about="https://github.com/btayart/MSIA_2020/blob/master/vacation.owl">
+        <owl:versionIRI rdf:resource="https://github.com/btayart/MSIA_2020/blob/master/vacation.owl"/>
+        <rdfs:comment>Authors: Brice Tayart &amp; Mouhcine El Hammar</rdfs:comment>
+        <rdfs:comment>Protégé lab assignment for IA301 - Logic and Symbolic IA (MSIA 2020, Télécom Paris)</rdfs:comment>
+        <rdfs:comment>The goal of the Vacation ontology is to classify Vacation types. Going on vacation involves an environment (e.g. near a beach), some accommodation (e.g. an hotel) and some activities (e.g. visits, sports). Accommodation and activities fall in different classes and may also have a cost. A vacation may then be classified according to its content (e.g. a vacation in the mountains, sleeping only under the tent and involving at least some hiking may be considered a hiking trip)</rdfs:comment>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#accomodatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#accomodatedAt">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#cheaperThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#cheaperThan">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#costRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#costRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#costRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneAtAccomodation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneAtAccomodation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isActivityDoneFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isInEnvironment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isActivityDoneFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isActivityDoneFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isInEnvironment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isInEnvironment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isLocatedInEnvironment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isLocatedInEnvironment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#moreExpensiveThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#moreExpensiveThan">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#costRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Affordable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Affordable">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#cheaperThan"/>
+                                <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#AffordableHotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#AffordableHotel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Affordable"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#AffordableOrFree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#AffordableOrFree">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Affordable"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Free"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Beach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Beach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#BeachParty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#BeachParty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Party"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Beach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#BeachVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#BeachVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SeasideWalk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Swimming"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Beach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Camping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Camping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Affordable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cheap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cheap">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapHotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapHotel">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hotel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapOrFree -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapOrFree">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cheap"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Free"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapOrFree"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapOrFree"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Climbing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Climbing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ExtremeActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Mountain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Concert -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Concert">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalActivity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Deluxe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Deluxe">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#moreExpensiveThan"/>
+                                <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Expensive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Expensive">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ExtremeActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ExtremeActivity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ThrillingActivity"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#FishermanHut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#FishermanHut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Lodge"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isLocatedInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Beach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Fishing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Fishing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#OutdoorActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#RelaxingActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Football -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Football">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SocialActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Forest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Forest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ForestHut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ForestHut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Lodge"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isLocatedInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Forest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Free -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Free">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CostClass"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#GourmetRestaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#GourmetRestaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Restaurant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#GuidedTour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#GuidedTour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SocialActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Visit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#HealthyActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#HealthyActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#HikeTripVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#HikeTripVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hiking"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Free"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Camping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Lodge"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City"/>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hiking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hiking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#OutdoorActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hotel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Lodge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Lodge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#FishermanHut"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ForestHut"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MountainHut"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneAtAccomodation"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryHotel"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryHotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryHotel">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hotel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasCost"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryActivity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryHotel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cheap"/>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Mountain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Mountain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MountainHike -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MountainHike">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hiking"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Mountain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MountainHut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MountainHut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Lodge"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#isLocatedInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Mountain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MuseumVisit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MuseumVisit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Visit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MusicFestival -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MusicFestival">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Concert"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Opera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Opera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Concert"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#RelaxingActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#OutdoorActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#OutdoorActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#OutdoorSport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#OutdoorSport">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#OutdoorActivity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Party -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Party">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SocialActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ThrillingActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#QuietVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#QuietVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#RelaxingActivity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ThrillingActivity"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#RelaxingActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#RelaxingActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ThrillingActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SeasideWalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SeasideWalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Hiking"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Beach"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SkyDiving -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SkyDiving">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ExtremeActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SocialActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SocialActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Spa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Spa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#HealthyActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#LuxuryActivity"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#RelaxingActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#HealthyActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportsVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportsVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SummerBreakVacation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SummerBreakVacation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasActivity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Party"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Camping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CheapHotel"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Swimming -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Swimming">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#SportActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ThrillingActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#ThrillingActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#UnguardedMountainHut -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#UnguardedMountainHut">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Free"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#MountainHut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#hasAccomodation"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Visit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Visit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#CulturalActivity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#doneInEnvironment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#City"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+        <cheaperThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+        <cheaperThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+        <cheaperThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+        <moreExpensiveThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#moreExpensiveThan"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#moreExpensiveThan"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+        <cheaperThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+        <moreExpensiveThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+        <moreExpensiveThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+        <moreExpensiveThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#cheaperThan"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#cheaperThan"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+        <cheaperThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+        <cheaperThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+        <moreExpensiveThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+        <moreExpensiveThan rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#cheaperThan"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#moreExpensiveThan"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Accomodation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Activity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Cost"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#Environment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#VacationType"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#budget"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#expensive"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-21#standard"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

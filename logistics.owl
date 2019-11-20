@@ -1,0 +1,882 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#"
+     xml:base="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>crane</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>forklift</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#openingTypes -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#openingTypes">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>side</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>top</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#packageTypes -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#packageTypes">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>box</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>oversize</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>pallet</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canBeLiftedByHandlingEquipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canBeLiftedByHandlingEquipment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftShipment"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canBeLiftedByHandlingEquipmentType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canBeLiftedByHandlingEquipmentType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftPackage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftPackage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftShipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftShipment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftThroughOpening -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftThroughOpening">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#givesAccessToHandlingEquipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#givesAccessToHandlingEquipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#givesAccessToHandlingEquipment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasEmptyTruck -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasEmptyTruck">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LoadedTruck"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Warehouse"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipmentType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipmentType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasLoadedTruck -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasLoadedTruck">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TransportPlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LoadedTruck"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasMaxLiftingWeight -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasMaxLiftingWeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasOpening -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasOpening">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasPackageType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasPackageType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasShipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasShipment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LoadedTruck"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasUnitWeight -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasUnitWeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasWeightGe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasWeightGe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#loadsAtWarehouse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#loadsAtWarehouse">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TransportPlan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Warehouse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasWeight">
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfHandlingEquipmentType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfHandlingEquipmentType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfOpeningType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfOpeningType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#openingTypes"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfPackageType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfPackageType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#packageTypes"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Box -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Box">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfPackageType"/>
+                        <owl:hasValue>box</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#BoxTruck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#BoxTruck">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasOpening"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#SideOpening"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasOpening"/>
+                                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#SideOpening"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#FlatbedTruck"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Crane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Crane">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipmentType"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_crane"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Forklift"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#CraneTruck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#CraneTruck">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#FlatbedTruck"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Crane"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#FeasibleTransportPlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#FeasibleTransportPlan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TransportPlan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#FlatbedTruck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#FlatbedTruck">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasOpening"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#SideOpening"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasOpening"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TopOpening"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Forklift -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Forklift">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipmentType"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_forklift"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipmentType"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasMaxLiftingWeight"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfHandlingEquipmentType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfHandlingEquipmentType"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LiftTruck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LiftTruck">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#BoxTruck"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasHandlingEquipment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Forklift"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LoadedTruck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LoadedTruck">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasShipment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasEmptyTruck"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Oversize -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Oversize">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfPackageType"/>
+                        <owl:hasValue>oversize</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfPackageType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#packageTypes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfPackageType"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Pallet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Pallet">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfPackageType"/>
+                        <owl:hasValue>pallet</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasPackageType"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasUnitWeight"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#SideOpening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#SideOpening">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfOpeningType"/>
+                        <owl:hasValue>side</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TopOpening"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TopOpening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TopOpening">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfOpeningType"/>
+                        <owl:hasValue>top</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TransportPlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TransportPlan">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasLoadedTruck"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LoadedTruck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#loadsAtWarehouse"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Warehouse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasOpening"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening">
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#isOfOpeningType"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Warehouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Warehouse"/>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasWeightGe"/>
+                <owl:hasSelf rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasSelf>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasWeight"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:hasKey rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#hasWeight"/>
+        </owl:hasKey>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_crane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_crane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+        <canLiftPackage rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_box"/>
+        <canLiftPackage rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_oversize"/>
+        <canLiftPackage rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_pallet"/>
+        <canLiftThroughOpening rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_top"/>
+        <isOfHandlingEquipmentType rdf:datatype="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes">crane</isOfHandlingEquipmentType>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_crane"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftThroughOpening"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_side"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_forklift -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_forklift">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+        <canLiftPackage rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_box"/>
+        <canLiftPackage rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_pallet"/>
+        <canLiftThroughOpening rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_side"/>
+        <canLiftThroughOpening rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_top"/>
+        <isOfHandlingEquipmentType rdf:datatype="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes">forklift</isOfHandlingEquipmentType>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NegativePropertyAssertion"/>
+        <owl:sourceIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_forklift"/>
+        <owl:assertionProperty rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#canLiftPackage"/>
+        <owl:targetIndividual rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_oversize"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_box -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_box">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+        <isOfPackageType rdf:datatype="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes">box</isOfPackageType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_oversize -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_oversize">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+        <isOfPackageType rdf:datatype="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes">oversize</isOfPackageType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_pallet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_pallet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+        <isOfPackageType rdf:datatype="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentTypes">pallet</isOfPackageType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_side -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_side">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+        <isOfOpeningType rdf:datatype="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#openingTypes">side</isOfOpeningType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_top -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#truckOpening_top">
+        <rdf:type rdf:resource="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+        <isOfOpeningType rdf:datatype="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#openingTypes">top</isOfOpeningType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Box"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Oversize"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Pallet"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#HandlingEquipmentType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#LoadedTruck"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#PackageType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Shipment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TransportPlan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Truck"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#TruckOpening"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#Warehouse"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#WeightClass"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_crane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#handlingEquipmentType_forklift"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_box"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_oversize"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/btayart/ontologies/2019/10/untitled-ontology-10#package_pallet"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
